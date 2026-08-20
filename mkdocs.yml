@@ -1,1 +1,17 @@
-site_name: Rocket Avionics Wiki
+site_name: Rocket Wiki
+
+nav:
+  - 首页: index.md
+
+  - 火箭系统:
+      - 结构设计: structures/index.md
+      - 航电系统: avionics/index.md
+      - 推进系统: propulsion/index.md
+
+  - 仿真分析:
+      - 概述: simulation/index.md
+
+  - 飞行记录:
+      - 概述: flight-records/index.md
+  
+  - 开发规范: development/index.md

@@ -4,4 +4,6 @@
 
 ---
 
-#### 文档开发规范以及工作流程：[docsWorkflow](docs_workflow.md)
+#### 文档工作流：[docsWorkflow](assets/docs_workflow.md)
+
+#### 文档开发规范：[docsStandard](assets/docs_standard.md)

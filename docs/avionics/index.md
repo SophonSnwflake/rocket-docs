@@ -1,3 +1,7 @@
+<figure markdown>
+  ![LOGO](assets/picture/LOGO.png){ height="300" }
+</figure>
+
 # 航电系统
 
 文档AI等级：4

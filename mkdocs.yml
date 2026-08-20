@@ -18,3 +18,5 @@ nav:
       - 概述: flight-records/index.md
   
   - 开发规范: development/index.md
+
+  - 鬼话: Mad/index.md

@@ -1,5 +1,5 @@
 <figure markdown>
-  ![LOGO](assets/picture/LOGO.jpg){ height="550" }
+  ![LOGO](assets/picture/LOGO.png){ height="400" }
 </figure>
 
 # 推进系统

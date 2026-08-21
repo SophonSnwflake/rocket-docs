@@ -1,5 +1,5 @@
 <figure markdown>
-  ![LOGO](assets/picture/LOGO.png){ height="300" }
+  ![LOGO](assets/picture/LOGO.png){ height="400" }
 </figure>
 
 # 航电系统

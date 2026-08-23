@@ -75,6 +75,17 @@ V2代发动机为固体推进剂实验火箭发动机，于 2026-07 开始设计
 | 药柱几何输入检查 | ![药柱几何输入检查](assets/picture/屏幕截图%202026-07-16%20132645.png){ height="200" } |
 | 喷嘴参数设置 | ![喷嘴参数设置](assets/picture/屏幕截图%202026-07-16%20133230.png){ height="200" } |
 
+## 试车记录
+
+以下为发动机静态试车过程中的视频记录，点击文件名即可查看或下载：
+
+| 试车批次 | 视频文件 |
+|----------|----------|
+| 试车 1 | [VID_396.mp4](assets/video/试车1/VID_396.mp4) |
+| 试车 1 | [VID_397.mp4](assets/video/试车1/VID_397.mp4) |
+| 试车 2 | [b4ca8e13e7a58ab08614087154d66cb3.mp4](assets/video/试车2/b4ca8e13e7a58ab08614087154d66cb3.mp4) |
+| 试车 2 | [c1caa85ae81baaad16deae1c689b7ed6.mp4](assets/video/试车2/c1caa85ae81baaad16deae1c689b7ed6.mp4) |
+
 ## 说明
 
 * 模型采用 STEP 格式（ISO 10303），适用于主流三维 CAD 软件（如 SolidWorks、Fusion 360、FreeCAD 等）。

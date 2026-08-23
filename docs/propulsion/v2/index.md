@@ -81,10 +81,10 @@ V2代发动机为固体推进剂实验火箭发动机，于 2026-07 开始设计
 
 | 试车批次 | 视频文件 |
 |----------|----------|
-| 试车 1 | [VID_396.mp4](assets/video/试车1/VID_396.mp4) |
-| 试车 1 | [VID_397.mp4](assets/video/试车1/VID_397.mp4) |
-| 试车 2 | [b4ca8e13e7a58ab08614087154d66cb3.mp4](assets/video/试车2/b4ca8e13e7a58ab08614087154d66cb3.mp4) |
-| 试车 2 | [c1caa85ae81baaad16deae1c689b7ed6.mp4](assets/video/试车2/c1caa85ae81baaad16deae1c689b7ed6.mp4) |
+| 试车 1 | [motor_test_1_video_1.mp4](assets/video/motor_test_1/motor_test_1_video_1.mp4) |
+| 试车 1 | [motor_test_1_video_2.mp4](assets/video/motor_test_1/motor_test_1_video_2.mp4) |
+| 试车 2 | [motor_test_2_video_1.mp4](assets/video/motor_test_2/motor_test_2_video_1.mp4) |
+| 试车 2 | [motor_test_2_video_2.mp4](assets/video/motor_test_2/motor_test_2_video_2.mp4) |
 
 ## 说明
 

@@ -3,8 +3,8 @@
 文档AI等级：4
 
 <figure markdown>
-  ![喷管装配](assets/picture/喷管.png){ height="300" }
-  ![壳体](assets/picture/壳体.jpg){ height="300" }
+  ![喷管装配](assets/picture/nozzle.png){ height="300" }
+  ![壳体](assets/picture/casing.jpg){ height="300" }
 </figure>
 
 ## 基本介绍
@@ -63,17 +63,17 @@ V2代发动机为固体推进剂实验火箭发动机，于 2026-07 开始设计
 
 | 内容 | 图片 |
 |------|------|
-| 药柱几何设计 | ![药柱几何设计](assets/picture/屏幕截图%202026-07-16%20133721.png){ height="200" } |
-| 内弹道计算结果 | ![计算结果](assets/picture/数据.png){ height="200" } |
-| 设计参数表 | ![设计参数表](assets/picture/数据2.png){ height="200" } |
-| 固体药柱组件图纸 | ![固体药柱组件图纸](assets/picture/堵头.png){ height="200" } |
-| 燃烧室端盖图纸 | ![燃烧室端盖图纸](assets/picture/壳体.jpg){ height="200" } |
-| 燃烧室装配图 | ![燃烧室装配图](assets/picture/喷管.png){ height="200" } |
-| 喷嘴计算表 | ![喷嘴计算表](assets/picture/喷管参数.png){ height="200" } |
-| 仿真系统设置 | ![仿真系统设置1](assets/picture/屏幕截图%202026-07-16%20132609.png){ height="200" } |
-| 仿真系统设置 | ![仿真系统设置2](assets/picture/屏幕截图%202026-07-16%20132633.png){ height="200" } |
-| 药柱几何输入检查 | ![药柱几何输入检查](assets/picture/屏幕截图%202026-07-16%20132645.png){ height="200" } |
-| 喷嘴参数设置 | ![喷嘴参数设置](assets/picture/屏幕截图%202026-07-16%20133230.png){ height="200" } |
+| 药柱几何设计 | ![药柱几何设计](assets/picture/screenshot_grain_geometry.png){ height="300" } |
+| 内弹道计算结果 | ![计算结果](assets/picture/data_ballistic.png){ height="300" } |
+| 设计参数表 | ![设计参数表](assets/picture/data_design_params.png){ height="300" } |
+| 固体药柱组件图纸 | ![固体药柱组件图纸](assets/picture/plug.png){ height="300" } |
+| 燃烧室端盖图纸 | ![燃烧室端盖图纸](assets/picture/casing.jpg){ height="300" } |
+| 燃烧室装配图 | ![燃烧室装配图](assets/picture/nozzle.png){ height="300" } |
+| 喷嘴计算表 | ![喷嘴计算表](assets/picture/nozzle_params.png){ height="300" } |
+| 仿真系统设置 | ![仿真系统设置1](assets/picture/screenshot_settings_1.png){ height="300" } |
+| 仿真系统设置 | ![仿真系统设置2](assets/picture/screenshot_settings_2.png){ height="300" } |
+| 药柱几何输入检查 | ![药柱几何输入检查](assets/picture/screenshot_grain_check.png){ height="300" } |
+| 喷嘴参数设置 | ![喷嘴参数设置](assets/picture/screenshot_nozzle_settings.png){ height="300" } |
 
 ## 试车记录
 

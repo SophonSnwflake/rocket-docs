@@ -22,6 +22,8 @@ V2代发动机为固体推进剂实验火箭发动机，于 2026-07 开始设计
 | 设计喷燃比 | 334 |
 | 开始设计 | 2026-07 |
 
+---
+
 ## 设计参数
 
 固体推进剂设计与内弹道计算结果如下：
@@ -36,6 +38,8 @@ V2代发动机为固体推进剂实验火箭发动机，于 2026-07 开始设计
 | 药柱长度 | 5.5118 in |
 | 药柱中孔直径 | 0.1575 in |
 
+---
+
 ## 喷嘴参数
 
 | 参数 | 数值 |
@@ -48,6 +52,8 @@ V2代发动机为固体推进剂实验火箭发动机，于 2026-07 开始设计
 | 扩张半角 | 15 deg |
 | 膨胀比 | 5.252 |
 
+---
+
 ## 部件 3D 模型
 
 以下为发动机各部件的三维模型文件（STEP 格式），点击文件名即可下载：
@@ -57,23 +63,27 @@ V2代发动机为固体推进剂实验火箭发动机，于 2026-07 开始设计
 | 堵头 | [堵头.step](assets/model/堵头.step) |
 | 喷口 | [喷口.step](assets/model/喷口.step) |
 
+---
+
 ## 设计图纸与数据
 
 以下为发动机设计过程中的工程图纸与计算数据截图：
 
-| 内容 | 图片 |
-|------|------|
-| 药柱几何设计 | ![药柱几何设计](assets/picture/screenshot_grain_geometry.png){ height="300" } |
-| 内弹道计算结果 | ![计算结果](assets/picture/data_ballistic.png){ height="300" } |
-| 设计参数表 | ![设计参数表](assets/picture/data_design_params.png){ height="300" } |
-| 固体药柱组件图纸 | ![固体药柱组件图纸](assets/picture/plug.png){ height="300" } |
-| 燃烧室端盖图纸 | ![燃烧室端盖图纸](assets/picture/casing.jpg){ height="300" } |
-| 燃烧室装配图 | ![燃烧室装配图](assets/picture/nozzle.png){ height="300" } |
-| 喷嘴计算表 | ![喷嘴计算表](assets/picture/nozzle_params.png){ height="300" } |
-| 仿真系统设置 | ![仿真系统设置1](assets/picture/screenshot_settings_1.png){ height="300" } |
-| 仿真系统设置 | ![仿真系统设置2](assets/picture/screenshot_settings_2.png){ height="300" } |
-| 药柱几何输入检查 | ![药柱几何输入检查](assets/picture/screenshot_grain_check.png){ height="300" } |
-| 喷嘴参数设置 | ![喷嘴参数设置](assets/picture/screenshot_nozzle_settings.png){ height="300" } |
+| 内容 | 图片 | 下载链接 |
+|------|------|------|
+| 药柱几何设计 | ![药柱几何设计](assets/picture/screenshot_grain_geometry.png){ height="200" } | [screenshot_grain_geometry.png](assets/picture/screenshot_grain_geometry.png) |
+| 内弹道计算结果 | ![计算结果](assets/picture/data_ballistic.png){ height="200" } | [data_ballistic.png](assets/picture/data_ballistic.png) |
+| 设计参数表 | ![设计参数表](assets/picture/data_design_params.png){ height="200" } | [data_design_params.png](assets/picture/data_design_params.png) |
+| 固体药柱组件图纸 | ![固体药柱组件图纸](assets/picture/plug.png){ height="200" } | [plug.png](assets/picture/plug.png) |
+| 燃烧室端盖图纸 | ![燃烧室端盖图纸](assets/picture/casing.jpg){ height="200" } | [casing.jpg](assets/picture/casing.jpg) |
+| 燃烧室装配图 | ![燃烧室装配图](assets/picture/nozzle.png){ height="200" } | [nozzle.png](assets/picture/nozzle.png) |
+| 喷嘴计算表 | ![喷嘴计算表](assets/picture/nozzle_params.png){ height="200" } | [nozzle_params.png](assets/picture/nozzle_params.png) |
+| 仿真系统设置 | ![仿真系统设置1](assets/picture/screenshot_settings_1.png){ height="200" } | [screenshot_settings_1.png](assets/picture/screenshot_settings_1.png) |
+| 仿真系统设置 | ![仿真系统设置2](assets/picture/screenshot_settings_2.png){ height="200" } | [screenshot_settings_2.png](assets/picture/screenshot_settings_2.png) |
+| 药柱几何输入检查 | ![药柱几何输入检查](assets/picture/screenshot_grain_check.png){ height="200" } | [screenshot_grain_check.png](assets/picture/screenshot_grain_check.png) |
+| 喷嘴参数设置 | ![喷嘴参数设置](assets/picture/screenshot_nozzle_settings.png){ height="200" } | [screenshot_nozzle_settings.png](assets/picture/screenshot_nozzle_settings.png) |
+
+---
 
 ## 试车记录
 
@@ -85,6 +95,8 @@ V2代发动机为固体推进剂实验火箭发动机，于 2026-07 开始设计
 | 试车 1 | [motor_test_1_video_2.mp4](assets/video/motor_test_1/motor_test_1_video_2.mp4) |
 | 试车 2 | [motor_test_2_video_1.mp4](assets/video/motor_test_2/motor_test_2_video_1.mp4) |
 | 试车 2 | [motor_test_2_video_2.mp4](assets/video/motor_test_2/motor_test_2_video_2.mp4) |
+
+---
 
 ## 说明
 

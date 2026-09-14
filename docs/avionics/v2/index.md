@@ -122,6 +122,10 @@ s
 
 在对lora进行地面站和飞控的互相通讯测试时，发现飞控无法收到地面站的消息，在排查时把飞控的TX逻辑注释掉后，则可以正常收到数据，由此证明问题在于TX在循环中占用了太多时间，导致RX几乎没有可以收到消息的空余。
 
+### 14 Sep 2026
+
+在调试的时候希望看到IMU的Z轴数据，在selectPhase函数里面打印，发现打印出的数字一直是同一个值，开机时为0，切换Phase后为一个固定值，但是在IMUloop里面打印则可以正确刷新。认为原因为包含selectPhase的RocketLoop的循环频率为1000hz，而IMUloop的循环频率同样为1000hz，所以如果RocketLoop里面包含printf的高耗时函数时，会导致IMUloop得不到分配，经测试，将rocket循环频率降至100hz后，即使内部有printf函数，也不会导致IMUloop被架空。考虑到RocketLoop内不做特别多对时间要求紧张的操作，所以保留RocketLoop为100hz。
+
 
 
 ## 硬件信息

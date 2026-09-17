@@ -3,8 +3,6 @@ site_name: Rocket Wiki
 markdown_extensions:
   - attr_list
   - md_in_html
-
-markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 

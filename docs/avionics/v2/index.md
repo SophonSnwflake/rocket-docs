@@ -3,7 +3,7 @@
 文档AI等级：2
 
 <figure markdown>
-  ![照片](assets/picture/picture.jpg){ height="300" }
+  ![照片](assets/picture/picture.png){ height="300" }
   ![V2 航电系统实物照片与 PCB 布局](assets/picture/PCB.png){ height="300" }
 </figure>
 

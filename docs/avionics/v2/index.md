@@ -80,7 +80,7 @@
 
 ## 细节说明
 
-### 软件设计说明
+### 部分软件设计说明
 
 ### Command Context 设计
 
@@ -94,7 +94,7 @@ rocket类作为总类，其下包含若干个commander类指针，而每个comma
 
 接着上文，而LoraCommander的数据来源来自于app层内Communication封装里面的communicatorLoop函数，这个函数会不断循环，承担两个作用：将rocket其他部分的发送请求所产生的队列内的待发送包发送出去，以及在不发送的时候将lora硬件置为Rx接收状态，当接收到数据时，在communicatorLoop的输入值内把标志位置1并返回buffer的指针。所以可以看到Lora的信息来自于RocketTask在调用communicatorLoop的自我循环，不需要中断，而Rocket类大可以直接在communicatorLoop后面直接判断是否收到消息并调用commander解析，但是处于两个考虑：1 为了让commander的格式尽可能相同。2以后communicatorLoop可能不在rocketLoop中循环而是加入中断等其他措施。所以communicatorLoop执行完的后面，同样延续了UartCommand的结构，先把communicatorLoop接收到的buffer转换到rocket类内自己的buffer里面，然后把自己的标志位置1，主循环内的handleLoraCommandData会自动去解析收到的一包数据。
 
-## Debug记录
+## Debug记录 / 开发日志
 
 ### 6 Aug 2026
 
@@ -156,7 +156,9 @@ $$
 
 实验结果良好。
 
+### 18 Sep 2026
 
+添加电压探针驱动，在测试时发现电压读取数据为0.0V，原始数据为1，对硬件进行排查时中间的一个分压电阻出现一端虚焊，导致电压传不到MCU，试图使用热风枪融化锡焊，但因无助焊剂导致焊盘氧化且难以操作。遂放弃，等待工具到齐与工作台搭建完毕后再测试电压探针。GPS同样需要等烙铁到货后焊接接口。目前只能先完善软件鲁棒性，今天目标是排查火箭发射全流程的遥测逻辑。
 
 
 

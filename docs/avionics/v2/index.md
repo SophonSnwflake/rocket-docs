@@ -178,9 +178,6 @@ $$
 
 
 
-
-
-
 ## 硬件信息
 
 - 原理图：[原理图.pdf](assets/hardware/原理图.pdf)
@@ -196,3 +193,7 @@ $$
 ## 软件源码
 
 源码位置：[Rocket_FlightControlSystem](https://github.com/SophonSnwflake/Rocket_FlightControlSystem)
+
+## 参考文档/手册
+
+- W25Q28芯片手册：[W25Q28.pdf](assets/papers/W25Q28.pdf)

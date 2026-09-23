@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Index - Rocket Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Rocket Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../" class="nav-link">航电系统</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../structures/" class="nav-link">结构设计</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../propulsion/" class="nav-link">推进系统</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">仿真分析</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../simulation/" class="dropdown-item">概述</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">飞行记录</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../flight-records/index.md" class="dropdown-item">概述</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../development/" class="nav-link">开发规范</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../mad/" class="nav-link">鬼话</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="command-context">Command Context 设计</h3>
+<p>在application层的命令系统中，在处理回调函数时，由于命令解析框架（RSL CommandEngine）中的回调函数由框架主动调用，其执行上下文不再处于原本的RocketCommand对象成员函数调用链中，因此需要通过context将Application层对象传递给回调函数在app_command-&gt;mid_command-&gt;回调函数这一整个链条里面，保留了一个“context”指针，app_handler文件里面的回调函数可以通过context来操作rocket类里面的其他对象的指针。</p>
+<h3 id="commander">Commander 设计</h3>
+<p>rocket类作为总类，其下包含若干个commander类指针，而每个commander类实例只能包含一个数据来源，比如UARTcommander，LORAcommander。</p>
+<p>本航电拥有两个commander，UARTcommander和LoRacommander，而每个commander对应一个数据的来源，这个数据来源函数需要转移两个数据：一个是数据的Buffer指针，另一个是数据的长度，本版本航电中，UART数据采用的是系统中断回调，放在tsk_isr内，当UART收到一个包，HAL库会中断并自动调用uart1Callback这个函数，紧接着调用rocket类内的receiveUARTCommandData函数，receiveUARTCommandData函数的作用是在中断内把Buffer指针和数据长度的信息转移到rocket类内的私有变量，并且把标志位置为收到Data的状态，而住循环内的另一个函数handleUARTCommandData在检测到标志位后自动处理rocket类内私有变量（buffer）所存储的Data。这样设计是为了把“数据写入”和“数据解析”分开，避免中断内处理大量解析的操作，占用中断。</p>
+<p>接着上文，而LoraCommander的数据来源来自于app层内Communication封装里面的communicatorLoop函数，这个函数会不断循环，承担两个作用：将rocket其他部分的发送请求所产生的队列内的待发送包发送出去，以及在不发送的时候将lora硬件置为Rx接收状态，当接收到数据时，在communicatorLoop的输入值内把标志位置1并返回buffer的指针。所以可以看到Lora的信息来自于RocketTask在调用communicatorLoop的自我循环，不需要中断，而Rocket类大可以直接在communicatorLoop后面直接判断是否收到消息并调用commander解析，但是处于两个考虑：1 为了让commander的格式尽可能相同。2以后communicatorLoop可能不在rocketLoop中循环而是加入中断等其他措施。所以communicatorLoop执行完的后面，同样延续了UartCommand的结构，先把communicatorLoop接收到的buffer转换到rocket类内自己的buffer里面，然后把自己的标志位置1，主循环内的handleLoraCommandData会自动去解析收到的一包数据。</p>
+<h4 id="commander_1">双commander设计的特性</h4>
+<p>双commander导致UART和LoRa命令如果同时进行发送指令的操作，可能导致优先级冲突。使用时绝不能同时使用两种通信方式同时发送指令。</p>
+<h3 id="_1">遥测序列号定义</h3>
+<p>遥测协议内的包头中的遥测序列号定义为：底层LoRa发送的序列，而并非Application层往队列内塞入数据的序列。这样设计是考虑到，上层application如果发生数据覆盖，属于“数据自我翻新”不应该被认定为是数据丢失。</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

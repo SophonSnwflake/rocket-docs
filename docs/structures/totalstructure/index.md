@@ -16,6 +16,8 @@
 | 伞舱 | [伞舱.step](assets/伞舱.step) |
 | 连接环 | [连接环.step](assets/连接环.step) |
 | 中心环 | [中心环.step](assets/中心环.step) |
+| 连接环_带螺丝孔_缩小长度 | [连接环.SLDPRT](assets/连接环带螺丝孔.SLDPRT) |
+| 连接环_带螺丝孔_缩小长度 | [连接环.stl](assets/连接环缩短带螺丝.STL) |
 
 ## 说明
 

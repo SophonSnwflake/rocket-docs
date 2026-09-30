@@ -20,8 +20,7 @@ nav:
   - 仿真分析:
       - 概述: simulation/index.md
 
-  - 飞行记录:
-      - 概述: flight-records/index.md
+  - 飞行记录: flight_records/index.md
   
   - 开发规范: development/index.md
 

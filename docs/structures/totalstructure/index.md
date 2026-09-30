@@ -19,6 +19,10 @@
 | 连接环_带螺丝孔_缩小长度 | [连接环.SLDPRT](assets/连接环带螺丝孔.SLDPRT) |
 | 连接环_带螺丝孔_缩小长度 | [连接环.stl](assets/连接环缩短带螺丝.STL) |
 
+## 部件 3D 模型
+
+[燃料中心棒固定环文件](FuelFixRing/index.md)
+
 ## 说明
 
 * 模型采用 STEP 格式（ISO 10303），适用于主流三维 CAD 软件（如 SolidWorks、Fusion 360、FreeCAD 等）。

@@ -83,7 +83,7 @@
 <span style="color: red;">
 未经我事先同意，请勿将本系统的相关数据、图表、仿真结果及软硬件资料用于个人或团队的对外展示、宣传或其他创作。经同意使用时，应明确注明成果来源及我的实际贡献，不得通过省略署名或误导性表述，使他人误认为该成果由发布者独立完成。
 
-以下是一些飞控记录的关键信息的图表化展示，如需下载全部请至飞控板块下载。
+以下是一些飞控记录的关键信息的图表化展示。
 
 <figure markdown>
   ![FlightAltitude_Baro](assets/LoggerInformation/barometer_altitude.png){ height="300" }
@@ -100,3 +100,13 @@
 <figure markdown>
   ![Gnss_velocity](assets/LoggerInformation/gnss_velocity.png){ height="300" }
 </figure>
+
+下载全部飞行日志原始信息：
+
+- Oct_3_2026 原始飞控信息（无切除飞行前空余时间）：
+
+    [Oct_3_2026 原始飞控日志（无切除飞行前空余时间）](assets/LoggerInformation/20261003_164049_COM12_force.zip)
+
+- Oct_3_2026 飞控信息：
+
+    [Oct_3_2026 飞控日志（仅保留飞行阶段）](assets/LoggerInformation/20261003_164049_COM12_force_CutBlank.zip)

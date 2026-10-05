@@ -101,6 +101,11 @@
   ![Gnss_velocity](assets/LoggerInformation/gnss_velocity.png){ height="300" }
 </figure>
 
+- 飞行数据可视化模拟
+<video controls style="width: 60%;">
+  <source src="assets/LoggerInformation/simulation.mp4" type="video/mp4">
+</video>
+
 下载全部飞行日志原始信息：
 
 - Oct_3_2026 原始飞控信息（无切除飞行前空余时间）：

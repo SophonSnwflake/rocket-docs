@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>YF-500 V2 - Rocket Wiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Rocket Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../avionics/" class="nav-link">航电系统</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../structures/" class="nav-link">结构设计</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../" class="nav-link">推进系统</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">仿真分析</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../simulation/" class="dropdown-item">概述</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../flight_records/" class="nav-link">飞行记录</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../development/" class="nav-link">开发规范</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../mad/" class="nav-link">鬼话</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#yf-500-v2" class="nav-link">YF-500 V2</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">总体参数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">性能参数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">推力室与喷管参数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">喷注器参数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">再生冷却参数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">仿真与设计图表</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_7" class="nav-link">三维模型</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_8" class="nav-link">原始参数记录</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_9" class="nav-link">说明</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="yf-500-v2">YF-500 V2</h1>
+<p>文档AI等级：4</p>
+<p>YF-500 V2 是 V1 初始方案的迭代版，型号与版本记为 YF-500 / V2.0，定位为「免后加工、自支撑打印版」。推力、室压、氧燃比、推进剂与工作时间与 V1 相同：海平面设计推力 500 N、燃烧室压力 3.0 MPa、氧燃比 1.0、95% 乙醇 + 气氧、单次工作 15 s，整机仍为 316L 不锈钢 SLM 一体成形。</p>
+<p>相对 V1，V2 的可确认变化集中在三处。喷注器由 6 组减为 4 组（均布于 Ø16.0 mm 圆周，间隔 90°），燃料与气氧喷注孔加大到 Ø1.50 mm × 4 与 Ø2.70 mm × 4；气膜冷却比例由燃料的 10% 提到 14.9%（头部 9.5% + 喉部 5.4%），头部气膜孔改为 10 × Ø0.8 mm、喉部 12 × Ø0.7 mm，限流孔改为打印时直接成形、不再钻孔；再生冷却通道截面由 0.95 × 0.95 mm 改为 1.0 × 1.0 mm，内壁加厚至 1.2 mm（喉部 1.1 mm）、外壁 1.8 mm（出口段 2.2 mm）。模型质量 1.63 kg（体积 206.46 cm³），打印毛坯含支撑约 1.75~1.9 kg。</p>
+<h2 id="_1">总体参数</h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>型号 / 版本</td>
+<td>YF-500 / V2.0</td>
+<td>免后加工、自支撑打印版</td>
+</tr>
+<tr>
+<td>设计推力（海平面）</td>
+<td>500 N</td>
+<td>额定工作点</td>
+</tr>
+<tr>
+<td>燃烧室压力 <span class="arithmatex">\(p_c\)</span></td>
+<td>3.0 MPa</td>
+<td>—</td>
+</tr>
+<tr>
+<td>氧燃比 O/F</td>
+<td>1.0</td>
+<td>富燃</td>
+</tr>
+<tr>
+<td>工作时间</td>
+<td>15 s</td>
+<td>单次工作</td>
+</tr>
+<tr>
+<td>燃料</td>
+<td>95% 乙醇（质量分数）</td>
+<td>入口 298.15 K</td>
+</tr>
+<tr>
+<td>氧化剂</td>
+<td>气氧</td>
+<td>入口 280 K，入口压力 3.5 MPa</td>
+</tr>
+<tr>
+<td>冷却方式</td>
+<td>再生冷却 + 气膜冷却</td>
+<td>燃料逆流冷却 + 头部/喉部气膜</td>
+</tr>
+<tr>
+<td>材料与工艺</td>
+<td>316L 不锈钢，金属 3D 打印（SLM）</td>
+<td>整体一次成形，免后加工</td>
+</tr>
+<tr>
+<td>点火方式</td>
+<td>从喷管出口插入点火头</td>
+<td>无专用点火器接口</td>
+</tr>
+<tr>
+<td>发动机质量（模型）</td>
+<td>1.63 kg</td>
+<td>体积 206.46 cm³（316L，7.9 g/cm³）</td>
+</tr>
+<tr>
+<td>打印毛坯质量（含支撑）</td>
+<td>≈1.75~1.9 kg</td>
+<td>支撑/余量按 7%~15% 估</td>
+</tr>
+<tr>
+<td>总推进剂消耗</td>
+<td>3.345 kg</td>
+<td>氧 1.672 kg + 燃料 1.672 kg</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">性能参数</h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>海平面</th>
+<th>真空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>理论比冲 <span class="arithmatex">\(I_{sp}\)</span></td>
+<td>242.32 s</td>
+<td>268.20 s</td>
+</tr>
+<tr>
+<td>交付比冲 <span class="arithmatex">\(I_{sp}\)</span></td>
+<td>228.64 s</td>
+<td>254.52 s</td>
+</tr>
+<tr>
+<td>交付推力</td>
+<td>500 N</td>
+<td>≈557 N</td>
+</tr>
+<tr>
+<td>有效排气速度</td>
+<td>2242.1 m/s</td>
+<td>2495.9 m/s</td>
+</tr>
+<tr>
+<td>推力系数 <span class="arithmatex">\(C_F\)</span>（交付 / 理论）</td>
+<td>1.4176 / 1.4625</td>
+<td>1.5781 / 1.6188</td>
+</tr>
+<tr>
+<td>特征速度 <span class="arithmatex">\(c^*\)</span>（交付 / 理论）</td>
+<td>1581.66 / 1624.80 m/s</td>
+<td>—</td>
+</tr>
+<tr>
+<td>燃烧室温度 <span class="arithmatex">\(T_c\)</span></td>
+<td>2544.69 K</td>
+<td>—</td>
+</tr>
+<tr>
+<td>燃气比热比 <span class="arithmatex">\(\gamma\)</span> / 气体常数 R</td>
+<td>1.2136 / 441.01 J/(kg·K)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>燃气平均分子量</td>
+<td>18.853 g/mol</td>
+<td>—</td>
+</tr>
+<tr>
+<td>总质量流量</td>
+<td>0.2230 kg/s（氧 / 燃料各 0.1115 kg/s）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>「特征速度」及以下五行属燃烧室单一状态量，原表未区分海平面与真空，真空列留空，本表以「—」表示。</p>
+<h2 id="_3">推力室与喷管参数</h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>数值</th>
+<th>参数</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>喷管扩张比 <span class="arithmatex">\(\varepsilon\)</span></td>
+<td>4.6</td>
+<td>燃烧室收缩比 <span class="arithmatex">\(\varepsilon_c\)</span></td>
+<td>6.0</td>
+</tr>
+<tr>
+<td>特征长度 <span class="arithmatex">\(L^*\)</span></td>
+<td>700 mm</td>
+<td>燃烧室容积</td>
+<td>82.3 cm³</td>
+</tr>
+<tr>
+<td>喉部直径 <span class="arithmatex">\(D_t\)</span></td>
+<td>12.23 mm</td>
+<td>喉部面积 <span class="arithmatex">\(A_t\)</span></td>
+<td>1.176e-04 m²</td>
+</tr>
+<tr>
+<td>喷管出口直径 <span class="arithmatex">\(D_e\)</span></td>
+<td>26.24 mm</td>
+<td>喷管出口面积 <span class="arithmatex">\(A_e\)</span></td>
+<td>5.408e-04 m²</td>
+</tr>
+<tr>
+<td>燃烧室直径 <span class="arithmatex">\(D_c\)</span></td>
+<td>29.97 mm</td>
+<td>喷管出口压力 <span class="arithmatex">\(p_e\)</span></td>
+<td>0.0994 MPa</td>
+</tr>
+<tr>
+<td>圆柱段长度 <span class="arithmatex">\(L_{cyl}\)</span></td>
+<td>101.16 mm</td>
+<td>燃烧室总长 <span class="arithmatex">\(L_c\)</span></td>
+<td>126.61 mm</td>
+</tr>
+<tr>
+<td>喷管扩张段长度 <span class="arithmatex">\(L_e\)</span></td>
+<td>26.44 mm</td>
+<td>燃气通道总长</td>
+<td>153.1 mm</td>
+</tr>
+<tr>
+<td>收敛半角</td>
+<td>30°</td>
+<td>喷管半角</td>
+<td>15°（锥形）</td>
+</tr>
+<tr>
+<td>喉部上游圆弧 <span class="arithmatex">\(R_1\)</span></td>
+<td>9.18 mm</td>
+<td>喉部下游圆弧 <span class="arithmatex">\(R_n\)</span></td>
+<td>2.34 mm</td>
+</tr>
+<tr>
+<td>收敛段过渡圆弧 <span class="arithmatex">\(R_2\)</span></td>
+<td>28.50 mm</td>
+<td>喷管发散效率</td>
+<td>0.9830</td>
+</tr>
+</tbody>
+</table>
+<p>原表按左右两栏并排排版，左右两栏各自独立排列，同一行左右两项之间没有对应关系；本表保留原分栏顺序。V2 本节的数值与 V1 完全一致，说明该版本未改推力室与喷管型面。</p>
+<h2 id="_4">喷注器参数</h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>数值</th>
+<th>参数</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>喷注器形式</td>
+<td>异类互击式（气-液双股互击）</td>
+<td>单元数量</td>
+<td>4 组，均布于 Ø16.0 mm 圆周，间隔 90°</td>
+</tr>
+<tr>
+<td>互击角</td>
+<td>60°（每侧 30°）</td>
+<td>两孔中心距 / 撞击距离</td>
+<td>3.2 mm / 2.77 mm</td>
+</tr>
+<tr>
+<td>燃料喷注孔直径</td>
+<td>Ø1.50 mm × 4（Cd = 0.65）</td>
+<td>气氧喷注孔直径</td>
+<td>Ø2.70 mm × 4（Cd = 0.80）</td>
+</tr>
+<tr>
+<td>燃料 / 气氧喷注压降（设计值）</td>
+<td>0.4 MPa / 0.5 MPa</td>
+<td>采用孔径对应压降</td>
+<td>0.27 MPa / 0.39 MPa</td>
+</tr>
+<tr>
+<td>燃料 / 气氧射流速度</td>
+<td>20.6 m/s / 115.3 m/s</td>
+<td>射流动量通量比 J</td>
+<td>1.89</td>
+</tr>
+<tr>
+<td>喷注器燃料流量 / 氧流量</td>
+<td>0.0949 / 0.1115 kg/s</td>
+<td>冷却剂（燃料）流量</td>
+<td>0.0949 kg/s</td>
+</tr>
+<tr>
+<td>打印公差（±0.25 mm）下流量面积误差</td>
+<td>燃料 -31% ~ +36%</td>
+<td>氧</td>
+<td>-18% ~ +19%</td>
+</tr>
+<tr>
+<td>头部气膜孔</td>
+<td>10 × Ø0.8 mm，占燃料 9.5%</td>
+<td>喉部气膜孔</td>
+<td>12 × Ø0.7 mm，占燃料 5.4%</td>
+</tr>
+<tr>
+<td>气膜限流孔</td>
+<td>头部 1 × Ø0.9 mm、喉部 1 × Ø0.7 mm（均直接打印，不钻孔）</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>原表按左右两栏并排排版，本表保留原分栏顺序；最后一行跨栏，右栏为空。</p>
+<h2 id="_5">再生冷却参数</h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>数值</th>
+<th>参数</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冷却通道数量</td>
+<td>18 条</td>
+<td>通道截面</td>
+<td>1.0 × 1.0 mm（喉部宽 1.0 mm）</td>
+</tr>
+<tr>
+<td>通道当量直径 <span class="arithmatex">\(D_h\)</span></td>
+<td>1.23 mm</td>
+<td>通道总流通面积</td>
+<td>28.5 mm²（平均）</td>
+</tr>
+<tr>
+<td>内壁厚度</td>
+<td>1.2 mm（喉部 1.1 mm）</td>
+<td>中壁 / 外层集液环</td>
+<td>1.2 mm / 1.0 mm</td>
+</tr>
+<tr>
+<td>外壁厚度</td>
+<td>1.8 mm（出口段 2.2 mm）</td>
+<td>冷却方式</td>
+<td>逆流再生冷却（燃料）</td>
+</tr>
+<tr>
+<td>冷却剂流量</td>
+<td>0.0949 kg/s（燃料 85.1%）</td>
+<td>冷却剂流速</td>
+<td>4.33 m/s</td>
+</tr>
+<tr>
+<td>冷却通道雷诺数</td>
+<td>4770</td>
+<td>冷却通道压降</td>
+<td>0.064 MPa</td>
+</tr>
+<tr>
+<td>冷却剂入口 / 出口温度</td>
+<td>298.15 / 456 K</td>
+<td>冷却剂工作压力</td>
+<td>≈3.5 MPa</td>
+</tr>
+<tr>
+<td>喉部峰值热流</td>
+<td>10.2 MW/m²</td>
+<td>总换热量</td>
+<td>≈46.5 kW</td>
+</tr>
+<tr>
+<td>燃气侧壁温峰值 <span class="arithmatex">\(T_{wg}\)</span></td>
+<td>≈1170 K</td>
+<td>冷却剂侧壁温峰值 <span class="arithmatex">\(T_{wc}\)</span></td>
+<td>508 K</td>
+</tr>
+<tr>
+<td>冷却剂饱和温度（3.5 MPa）</td>
+<td>485.0 K</td>
+<td>气膜冷却比例</td>
+<td>燃料 14.9%（头部 9.5% + 喉部 5.4%）</td>
+</tr>
+</tbody>
+</table>
+<p>原表数据存在一处不自洽：按「18 条 × 1.0 × 1.0 mm」计，总流通面积应为 18 mm²，而表列为 28.5 mm²（平均）；正方形截面 1.0 × 1.0 mm 的当量直径应为 1.0 mm，而表列为 1.23 mm。截图文字清晰，矛盾出在原始数据本身，待核。</p>
+<h2 id="_6">仿真与设计图表</h2>
+<table>
+<thead>
+<tr>
+<th>图表</th>
+<th>说明</th>
+<th>文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>圆度拟合（V1 对照）</td>
+<td>对 V1 几何四个关键回转特征做圆度拟合：喷管出口外圆 R=18.371 mm、内圆 R=12.711 mm、喉部外圆 R=12.519 mm、头部外圆 R=39.984 mm，椭圆度不超过 0.008%。</td>
+<td><img alt="V1_fig_circle_fit.png" height="140" src="assets/picture/V1_fig_circle_fit.png" /><br><a href="assets/picture/V1_fig_circle_fit.png">下载</a></td>
+</tr>
+<tr>
+<td>逐层截面与质心漂移（V1 对照）</td>
+<td>V1 几何按 0.040 mm 层厚逐层切片，给出截面积、外轮廓圆心偏移（峰值约 0.0022 mm）与层间错位指标。</td>
+<td><img alt="V1_fig_layer_profile.png" height="140" src="assets/picture/V1_fig_layer_profile.png" /><br><a href="assets/picture/V1_fig_layer_profile.png">下载</a></td>
+</tr>
+<tr>
+<td>悬垂与支撑（V1 对照）</td>
+<td>V1 几何沿构建方向 [0, 0.1] 的悬垂分布：需支撑面积 6847.2 mm²（5.76%），内部/窄缝 169.5 mm²，被遮挡 1412.3 mm²。</td>
+<td><img alt="V1_fig_overhang.png" height="140" src="assets/picture/V1_fig_overhang.png" /><br><a href="assets/picture/V1_fig_overhang.png">下载</a></td>
+</tr>
+<tr>
+<td>体素切片（V1 对照）</td>
+<td>V1 几何四个高度的体素切片，灰为实体、白为连通空气，青色点为封闭空腔探测的种子点，用于核查各内腔与外部是否连通。</td>
+<td><img alt="V1_fig_voxel_slices.png" height="140" src="assets/picture/V1_fig_voxel_slices.png" /><br><a href="assets/picture/V1_fig_voxel_slices.png">下载</a></td>
+</tr>
+<tr>
+<td>壁厚分布（V1 对照）</td>
+<td>V1 几何 15000 个采样点的局部壁厚直方图，P1=0.78 mm、P5=1.00 mm、P50=2.50 mm，虚线标出 0.8 mm 与 1.0 mm。</td>
+<td><img alt="V1_fig_wall_hist.png" height="140" src="assets/picture/V1_fig_wall_hist.png" /><br><a href="assets/picture/V1_fig_wall_hist.png">下载</a></td>
+</tr>
+<tr>
+<td>薄壁位置（V1 对照）</td>
+<td>V1 几何壁厚小于 1.0 mm 的位置分布（深红为小于 0.8 mm），叠加在全部采样点上用于定位打印薄弱区。</td>
+<td><img alt="V1_fig_wall_thin.png" height="140" src="assets/picture/V1_fig_wall_thin.png" /><br><a href="assets/picture/V1_fig_wall_thin.png">下载</a></td>
+</tr>
+<tr>
+<td>圆度拟合（V2）</td>
+<td>V2 几何四个关键回转特征的拟合：喷管出口外圆 R=19.136 mm、内圆 R=13.117 mm、喉部外圆 R=12.226 mm、头部外圆 R=51.974 mm，椭圆度不超过 0.001%。</td>
+<td><img alt="V2_fig_circle_fit.png" height="140" src="assets/picture/V2_fig_circle_fit.png" /><br><a href="assets/picture/V2_fig_circle_fit.png">下载</a></td>
+</tr>
+<tr>
+<td>逐层截面与质心漂移（V2）</td>
+<td>V2 几何逐层截面积曲线，外轮廓圆心偏移峰值约 0.0009 mm，层间错位小于 0.0008 mm。</td>
+<td><img alt="V2_fig_layer_profile.png" height="140" src="assets/picture/V2_fig_layer_profile.png" /><br><a href="assets/picture/V2_fig_layer_profile.png">下载</a></td>
+</tr>
+<tr>
+<td>悬垂与支撑（V2）</td>
+<td>V2 几何的悬垂统计：需支撑面积 2552.3 mm²（2.00%），内部/窄缝 1050.4 mm²，被遮挡 2459.4 mm²。</td>
+<td><img alt="V2_fig_overhang.png" height="140" src="assets/picture/V2_fig_overhang.png" /><br><a href="assets/picture/V2_fig_overhang.png">下载</a></td>
+</tr>
+<tr>
+<td>体素切片（V2）</td>
+<td>V2 几何的体素切片，检查头部集液腔、冷却通道与燃气腔在各高度截面上的连通性。</td>
+<td><img alt="V2_fig_voxel_slices.png" height="140" src="assets/picture/V2_fig_voxel_slices.png" /><br><a href="assets/picture/V2_fig_voxel_slices.png">下载</a></td>
+</tr>
+<tr>
+<td>壁厚分布（V2）</td>
+<td>V2 几何 15000 个采样点的壁厚直方图，P1=0.44 mm、P5=1.03 mm、P50=2.58 mm。</td>
+<td><img alt="V2_fig_wall_hist.png" height="140" src="assets/picture/V2_fig_wall_hist.png" /><br><a href="assets/picture/V2_fig_wall_hist.png">下载</a></td>
+</tr>
+<tr>
+<td>薄壁位置（V2）</td>
+<td>V2 几何壁厚小于 1.0 mm 的位置分布（深红为小于 0.8 mm），三个投影面加三维散点同时给出。</td>
+<td><img alt="V2_fig_wall_thin.png" height="140" src="assets/picture/V2_fig_wall_thin.png" /><br><a href="assets/picture/V2_fig_wall_thin.png">下载</a></td>
+</tr>
+<tr>
+<td>圆度拟合（V2 final3）</td>
+<td>迭代编号 final3 的几何圆度拟合：喷管出口外圆 R=18.829 mm、内圆 R=13.117 mm、喉部外圆 R=11.929 mm、头部外圆 R=51.974 mm。</td>
+<td><img alt="V2_final3_fig_circle_fit.png" height="140" src="assets/picture/V2_final3_fig_circle_fit.png" /><br><a href="assets/picture/V2_final3_fig_circle_fit.png">下载</a></td>
+</tr>
+<tr>
+<td>逐层截面与质心漂移（V2 final3）</td>
+<td>该版本逐层截面积与质心漂移曲线，外轮廓圆心偏移峰值约 0.0009 mm。</td>
+<td><img alt="V2_final3_fig_layer_profile.png" height="140" src="assets/picture/V2_final3_fig_layer_profile.png" /><br><a href="assets/picture/V2_final3_fig_layer_profile.png">下载</a></td>
+</tr>
+<tr>
+<td>悬垂与支撑（V2 final3）</td>
+<td>该版本需支撑面积 2562.9 mm²（2.01%），内部/窄缝 1069.3 mm²，被遮挡 2467.6 mm²。</td>
+<td><img alt="V2_final3_fig_overhang.png" height="140" src="assets/picture/V2_final3_fig_overhang.png" /><br><a href="assets/picture/V2_final3_fig_overhang.png">下载</a></td>
+</tr>
+<tr>
+<td>体素切片（V2 final3）</td>
+<td>该版本四个特征高度的体素切片，用于核对集液腔与冷却通道的连通与封闭空腔。</td>
+<td><img alt="V2_final3_fig_voxel_slices.png" height="140" src="assets/picture/V2_final3_fig_voxel_slices.png" /><br><a href="assets/picture/V2_final3_fig_voxel_slices.png">下载</a></td>
+</tr>
+<tr>
+<td>壁厚分布（V2 final3）</td>
+<td>该版本壁厚直方图（n=15000），P1=0.41 mm、P5=0.95 mm、P50=2.57 mm。</td>
+<td><img alt="V2_final3_fig_wall_hist.png" height="140" src="assets/picture/V2_final3_fig_wall_hist.png" /><br><a href="assets/picture/V2_final3_fig_wall_hist.png">下载</a></td>
+</tr>
+<tr>
+<td>薄壁位置（V2 final3）</td>
+<td>该版本壁厚小于 1.0 mm 的位置分布，四个视图分别为半径-高度、x-z、y-z 投影与三维散点。</td>
+<td><img alt="V2_final3_fig_wall_thin.png" height="140" src="assets/picture/V2_final3_fig_wall_thin.png" /><br><a href="assets/picture/V2_final3_fig_wall_thin.png">下载</a></td>
+</tr>
+</tbody>
+</table>
+<p>文件名前缀对应被分析的几何：<code>V1_</code> 为对 V1 几何做的对照分析，<code>V2_</code> 为 V2 首版几何，<code>V2_final3_</code> 为同批分析中迭代编号 final3 的结果（编号含义待核）。三组图均属打印可制造性分析，与 V1 页的热力/性能仿真图不同。</p>
+<h2 id="_7">三维模型</h2>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STEP</td>
+<td><a href="assets/model/YF-500_V2.step">YF-500_V2.step</a></td>
+<td>AP214 格式，由 Open CASCADE / build123d 导出，可直接再建模或划分网格。</td>
+</tr>
+<tr>
+<td>STL</td>
+<td><a href="assets/model/YF-500_V2.stl">YF-500_V2.stl</a></td>
+<td>二进制 STL，62212 个三角面，包围盒 104.0 × 103.9 × 189.5 mm。</td>
+</tr>
+<tr>
+<td>STL</td>
+<td><a href="assets/model/YF-500_V2_print.stl">YF-500_V2_print.stl</a></td>
+<td>打印定向导出的二进制 STL，62210 个三角面，包围盒与上一文件一致。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_8">原始参数记录</h2>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>截图</th>
+<th>下载链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 总体参数</td>
+<td><img alt="总体参数" height="200" src="assets/picture/param_01.png" /></td>
+<td><a href="assets/picture/param_01.png">下载</a></td>
+</tr>
+<tr>
+<td>2 性能参数</td>
+<td><img alt="性能参数" height="200" src="assets/picture/param_02.png" /></td>
+<td><a href="assets/picture/param_02.png">下载</a></td>
+</tr>
+<tr>
+<td>3 推力室与喷管参数</td>
+<td><img alt="推力室与喷管参数" height="200" src="assets/picture/param_03.png" /></td>
+<td><a href="assets/picture/param_03.png">下载</a></td>
+</tr>
+<tr>
+<td>4 喷注器参数</td>
+<td><img alt="喷注器参数" height="200" src="assets/picture/param_04.png" /></td>
+<td><a href="assets/picture/param_04.png">下载</a></td>
+</tr>
+<tr>
+<td>5 再生冷却参数</td>
+<td><img alt="再生冷却参数" height="200" src="assets/picture/param_05.png" /></td>
+<td><a href="assets/picture/param_05.png">下载</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_9">说明</h2>
+<ul>
+<li><strong>数据来源</strong>：本页参数全部转录自 YF-500 V2 的参数表截图，数值、单位、正负号与「≈」「~」等符号均照原文保留，未做换算或修约。</li>
+<li><strong>AI 整理</strong>：图片与表格由 AI 逐格转录整理，尚未经人工逐项复核；引用前请与原始截图对照。图表说明中的数值取自图内标注，表格数值取自参数表，两者口径不同。</li>
+<li><strong>模型格式</strong>：STEP 用于精确几何交换，STL 为三角面近似，<code>YF-500_V2_print.stl</code> 为打印定向版本，与本页打印工艺分析图对应。</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

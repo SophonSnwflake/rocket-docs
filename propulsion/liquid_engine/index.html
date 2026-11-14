@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Index - Rocket Wiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Rocket Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../avionics/" class="nav-link">航电系统</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../structures/" class="nav-link">结构设计</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">推进系统</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">仿真分析</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../simulation/" class="dropdown-item">概述</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../flight_records/" class="nav-link">飞行记录</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../development/" class="nav-link">开发规范</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../mad/" class="nav-link">鬼话</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">液体火箭发动机</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">基本介绍</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">系统组成</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_12" class="nav-link">工作循环</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_13" class="nav-link">推进剂组合</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_14" class="nav-link">关键性能参数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_15" class="nav-link">设计流程</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_16" class="nav-link">试车与数据</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#yf-500" class="nav-link">YF-500 型号文档</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_17" class="nav-link">板块内容规划</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_18" class="nav-link">资料索引</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_20" class="nav-link">说明</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<figure>
+<p><img alt="LOGO" height="400" src="../../assets/picture/LOGO.png" /></p>
+</figure>
+<h1 id="_1">液体火箭发动机</h1>
+<p>文档AI等级：5</p>
+<p>本页是「液体火箭发动机」板块的入口，用于整理液体火箭发动机的工作原理、系统组成、循环方案、推进剂选型、性能参数体系以及地面试车相关的工程资料。</p>
+<p>液体火箭发动机以液态推进剂为工质，在推力室内经雾化、混合、燃烧（或催化分解）后高速喷出产生推力。与固体发动机相比，液体方案把推进剂贮存与能量转换拆成两个可以独立设计的环节：推进剂单独贮存输送，推力室单独设计与试车，因此参数可调、工况可测，但系统复杂度更高。</p>
+<p>本板块重点记录<strong>方案为什么这样选、参数从哪里来、验证做到什么程度</strong>。本站没有实测依据的数值一律标注为「典型值/参考」；属于团队实际数据的，必须注明试车批次与数据来源。</p>
+<hr />
+<h2 id="_2">基本介绍</h2>
+<h3 id="_3">与固体发动机的差异</h3>
+<p>固体发动机把氧化剂与燃料混合在药柱内部，点火后按燃面规律自行燃烧，推力曲线在设计阶段由药柱几何基本确定。液体发动机把推进剂分贮，通过供应系统按控制时序送入推力室，推力可以在一定范围内调节，也可以多次关机与重启。</p>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>液体火箭发动机</th>
+<th>固体火箭发动机（对照本站 <a href="../v2/">V2 代发动机</a>）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>推进剂形态</td>
+<td>氧化剂与燃料分贮，均为液态</td>
+<td>药柱一体成型，固态</td>
+</tr>
+<tr>
+<td>比冲水平</td>
+<td>较高，典型值/参考 220~460 s，随组合差异很大</td>
+<td>较低，典型值/参考 130~250 s</td>
+</tr>
+<tr>
+<td>密度与体积</td>
+<td>液氢等低密度推进剂会显著增大贮箱体积</td>
+<td>推进剂密度高，箭体紧凑</td>
+</tr>
+<tr>
+<td>推力调节</td>
+<td>可通过节流阀或泵转速实现较大范围调节</td>
+<td>基本固定，调节手段有限</td>
+</tr>
+<tr>
+<td>关机与重启</td>
+<td>可多次关机，具备重启能力</td>
+<td>一般一次点火，难以中途关机</td>
+</tr>
+<tr>
+<td>系统复杂度</td>
+<td>高：泵、阀、管路、贮箱增压、控制时序</td>
+<td>低：无转动件，可靠性来源不同</td>
+</tr>
+<tr>
+<td>主要研制难点</td>
+<td>涡轮泵、冷却、启动时序与燃烧稳定性</td>
+<td>药柱成型、燃速控制与内弹道计算</td>
+</tr>
+</tbody>
+</table>
+<p>上表只用于说明技术特征，不构成优劣判断。小推力、短周期、低成本的任务里固体方案往往更合适；需要高比冲、可节流、可重启的场合，液体方案的优势更明显。</p>
+<h3 id="_4">典型应用场景</h3>
+<ul>
+<li>运载火箭一级、二级主发动机：高推力、长时间工作</li>
+<li>上面级与轨道机动发动机：高比冲、可多次启动</li>
+<li>姿控与游动发动机：小推力、脉冲工作</li>
+<li>可重复使用飞行器的着陆动力：深度节流与快速响应</li>
+</ul>
+<hr />
+<h2 id="_5">系统组成</h2>
+<p>液体发动机按功能可以拆成若干子系统。任何一处失效都会导致整机无法正常工作，因此文档应当按子系统分别留存设计依据与验证记录，而不是只保留整机参数。</p>
+<h3 id="_6">推力室</h3>
+<p>推力室是能量转换的核心，由喷注器、燃烧室与喷管组成。</p>
+<ul>
+<li><strong>喷注器</strong>：把氧化剂与燃料雾化、按设计混合比分配并组织燃烧。喷嘴型式（直流式、离心式、同轴式、针栓式）直接决定燃烧效率与燃烧稳定性，也是变推力与可重复使用方案的关键部件。</li>
+<li><strong>燃烧室</strong>：提供足够的停留时间完成燃烧。设计要点是特征长度、燃气流速、壁面热流与结构强度。</li>
+<li><strong>喷管</strong>：把燃气的热能转换为定向动能。几何参数为喉部面积 <span class="arithmatex">\(A_t\)</span>、出口面积 <span class="arithmatex">\(A_e\)</span> 与膨胀比 <span class="arithmatex">\(\varepsilon = A_e/A_t\)</span>。</li>
+</ul>
+<h3 id="_7">推进剂供应系统</h3>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>原理</th>
+<th>优点</th>
+<th>限制</th>
+<th>典型适用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>挤压式</td>
+<td>高压气体挤压贮箱，推进剂直接流入推力室</td>
+<td>结构简单、无转动件、可靠性来源清晰</td>
+<td>贮箱压力高、结构质量大，室压受限</td>
+<td>小推力、上面级、实验发动机</td>
+</tr>
+<tr>
+<td>泵压式</td>
+<td>涡轮泵或电动泵提升推进剂压力</td>
+<td>贮箱压力低、结构轻，可支撑高室压</td>
+<td>泵、密封与启动时序复杂</td>
+<td>大中型发动机、长时间工作</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">阀门与管路</h3>
+<p>包括主阀、隔离阀、节流阀、泄放阀、爆破膜、过滤器与各类管路接头。需要记录的重点是：阀门口径与流量特性、作动方式、密封形式、启动与关机时序，以及各工况下的压降。管路设计要同时兼顾流阻、热变形、振动与装配可达性。</p>
+<h3 id="_9">点火</h3>
+<p>常见点火方式：火炬点火器（能量大、可靠性高）、火花塞或电点火（结构简单，需合适的点火能量与混合比窗口）、自燃推进剂（如四氧化二氮与偏二甲肼，接触即着火，无需外部点火）、过氧化氢等单组元催化分解点火。点火必须与推进剂进入时序严格配合：先建立点火源再开主阀，否则容易在推力室内积累可燃混合物，引发爆燃。</p>
+<h3 id="_10">冷却</h3>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>原理</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>再生冷却</td>
+<td>推进剂先流经推力室壁面冷却通道，再进入喷注器</td>
+<td>热流承受能力高，适合长时间工作；通道设计与流阻是难点</td>
+</tr>
+<tr>
+<td>膜冷却</td>
+<td>在壁面附近引入低温推进剂形成保护膜</td>
+<td>结构简单，但以比冲为代价，常用于局部热点</td>
+</tr>
+<tr>
+<td>烧蚀冷却</td>
+<td>壁面材料烧蚀吸热</td>
+<td>结构简单，适合短时工作，但工作时间受限</td>
+</tr>
+<tr>
+<td>辐射冷却</td>
+<td>高温壁面向外辐射散热</td>
+<td>用于小推力、真空环境下的喷管延伸段</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_11">贮箱增压</h3>
+<p>贮箱增压保证泵入口或挤压式推力室入口有足够静压，避免汽蚀与流量失稳。常见方案有高压气瓶加减压器、自增压（用汽化推进剂增压）以及泵前引射增压。增压气体的质量与贮箱压力直接相关，属于系统级权衡的一部分。</p>
+<hr />
+<h2 id="_12">工作循环</h2>
+<p>工作循环决定推进剂如何驱动涡轮泵、能量损失发生在哪里，是液体发动机方案选择的第一层决策。</p>
+<table>
+<thead>
+<tr>
+<th>循环</th>
+<th>原理</th>
+<th>优点</th>
+<th>限制</th>
+<th>代表机型（公开资料）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>燃气发生器循环</td>
+<td>抽取少量推进剂在燃气发生器中燃烧驱动涡轮，燃气直接排出</td>
+<td>系统简单、启动容易、研制周期短</td>
+<td>驱动涡轮的推进剂不参与主推力，比冲有损失</td>
+<td>F-1、Merlin 1D、YF-20</td>
+</tr>
+<tr>
+<td>分级燃烧循环</td>
+<td>全部或大部分推进剂先进入预燃室燃烧，驱动涡轮后进入主燃烧室</td>
+<td>无涡轮排气损失，室压可以做得更高，比冲更高</td>
+<td>系统复杂、启动时序苛刻、预燃室温度与压力控制难度大</td>
+<td>RD-180、YF-100（富氧）；RS-25（富燃）；Raptor（全流量）</td>
+</tr>
+<tr>
+<td>膨胀循环</td>
+<td>推进剂流经再生冷却通道吸热汽化，用高压气体驱动涡轮</td>
+<td>无预燃室、系统相对简单、比冲高、启动温和</td>
+<td>涡轮功率受限于冷却通道换热能力，室压与推力难以做大</td>
+<td>RL10、Vinci、LE-5B</td>
+</tr>
+<tr>
+<td>电动泵压式</td>
+<td>电池驱动电机带动泵，取代涡轮与燃气发生器</td>
+<td>取消高温燃气驱动，系统简洁，节流与启动控制容易</td>
+<td>电池功率密度限制推力规模，长时间工作受能量密度约束</td>
+<td>Rutherford（Electron 一级）</td>
+</tr>
+</tbody>
+</table>
+<p>循环方案没有绝对优劣：小推力、低成本优先看燃气发生器或挤压式；高室压、高比冲优先看分级燃烧；长时间在轨、小推力优先看膨胀循环。</p>
+<hr />
+<h2 id="_13">推进剂组合</h2>
+<p>推进剂选择同时约束比冲、密度、冷却能力、材料相容性、安全性与操作成本。下表为公开资料的典型范围，仅作选型参考，不作为设计输入。</p>
+<table>
+<thead>
+<tr>
+<th>组合</th>
+<th>混合比 O/F（典型值/参考）</th>
+<th>真空比冲（典型值/参考）</th>
+<th>平均密度</th>
+<th>可贮存性</th>
+<th>主要工程问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>液氧/煤油</td>
+<td>2.2~2.6</td>
+<td>330~350 s</td>
+<td>高，约 1.0 g/cm³</td>
+<td>液氧低温，煤油常温</td>
+<td>积碳、冷却、煤油品质批次差异</td>
+</tr>
+<tr>
+<td>液氧/液氢</td>
+<td>5.5~6.0</td>
+<td>440~460 s</td>
+<td>低，约 0.3 g/cm³</td>
+<td>两者均低温</td>
+<td>液氢贮存与泄漏，低密度带来大贮箱</td>
+</tr>
+<tr>
+<td>液氧/甲烷</td>
+<td>3.4~3.6</td>
+<td>350~380 s</td>
+<td>中，约 0.85 g/cm³</td>
+<td>两者均低温</td>
+<td>低温绝热、点火与冷却设计</td>
+</tr>
+<tr>
+<td>四氧化二氮/偏二甲肼</td>
+<td>1.6~2.0</td>
+<td>290~330 s</td>
+<td>高，约 1.2 g/cm³</td>
+<td>常温可贮存</td>
+<td>强毒性与腐蚀性，需完整操作防护</td>
+</tr>
+<tr>
+<td>过氧化氢/醇类</td>
+<td>6~8（随浓度变化大）</td>
+<td>220~260 s</td>
+<td>高，约 1.2 g/cm³</td>
+<td>常温可贮存，但会缓慢分解</td>
+<td>浓度控制、材料相容性、分解失控风险</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>混合比按质量流量比定义。实际发动机常工作在略偏离化学当量的混合比上，以降低燃烧温度、保护壁面或提高特征速度。</li>
+<li>比冲对混合比、室压、膨胀比与环境压力都敏感。跨方案比较时应统一到同一基准（真空或海平面、同一膨胀比）。</li>
+<li>在比冲相近时，密度更高的组合通常带来更小的贮箱与更低的干重代价，选型需要做系统级权衡，不能只看比冲。</li>
+</ul>
+<hr />
+<h2 id="_14">关键性能参数</h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>符号</th>
+<th>定义</th>
+<th>典型范围（典型值/参考）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>推力</td>
+<td><span class="arithmatex">\(F\)</span></td>
+<td>发动机产生的反作用力，分海平面与真空两种状态</td>
+<td>小推力实验机 0.1~10 kN；现役大中型 0.1~8 MN</td>
+</tr>
+<tr>
+<td>室压</td>
+<td><span class="arithmatex">\(p_c\)</span></td>
+<td>燃烧室内的总压</td>
+<td>小推力 0.5~3 MPa；现役大中型 5~25 MPa</td>
+</tr>
+<tr>
+<td>比冲</td>
+<td><span class="arithmatex">\(I_{sp}\)</span></td>
+<td>单位重量流量推进剂产生的冲量</td>
+<td>随组合差异大，220~460 s</td>
+</tr>
+<tr>
+<td>混合比</td>
+<td><span class="arithmatex">\(O/F\)</span></td>
+<td>氧化剂与燃料的质量流量比</td>
+<td>见推进剂组合一节</td>
+</tr>
+<tr>
+<td>喉部面积</td>
+<td><span class="arithmatex">\(A_t\)</span></td>
+<td>喷管最小截面面积，决定流量与室压的关系</td>
+<td>由设计流量与室压反算</td>
+</tr>
+<tr>
+<td>出口面积</td>
+<td><span class="arithmatex">\(A_e\)</span></td>
+<td>喷管出口截面面积</td>
+<td>由膨胀比与工作高度确定</td>
+</tr>
+<tr>
+<td>膨胀比</td>
+<td><span class="arithmatex">\(\varepsilon\)</span></td>
+<td><span class="arithmatex">\(A_e/A_t\)</span></td>
+<td>海平面 4~25；真空上面级 40~200</td>
+</tr>
+<tr>
+<td>特征速度</td>
+<td><span class="arithmatex">\(c^*\)</span></td>
+<td>表征燃烧效率的等效排气速度</td>
+<td>1650~2400 m/s，随组合变化</td>
+</tr>
+<tr>
+<td>推力系数</td>
+<td><span class="arithmatex">\(C_F\)</span></td>
+<td>表征喷管膨胀效果的系数</td>
+<td>海平面 1.2~1.6；真空 1.6~2.0</td>
+</tr>
+</tbody>
+</table>
+<p>常用关系式，用于初步核算：</p>
+<div class="arithmatex">\[
+I_{sp} = \frac{F}{\dot{m}\, g_0}, \qquad
+c^* = \frac{p_c A_t}{\dot{m}}, \qquad
+C_F = \frac{F}{p_c A_t}
+\]</div>
+<ul>
+<li>实测 <span class="arithmatex">\(c^*\)</span> 与理论值之比典型值/参考为 0.90~0.97，可用于反推燃烧效率。</li>
+<li>喷管处于过膨胀状态时 <span class="arithmatex">\(C_F\)</span> 会下降，海平面工况需要按实际环境压力修正。</li>
+<li>上述关系式忽略两相流、摩擦、散热等损失，工程上应作为量级估算，不能替代详细计算。</li>
+</ul>
+<hr />
+<h2 id="_15">设计流程</h2>
+<p>液体发动机设计是一个反复迭代的过程，典型流程如下。</p>
+<ol>
+<li><strong>任务需求</strong>：确定推力、工作时间、比冲目标、包络与接口、可靠性与成本约束。</li>
+<li><strong>热力计算</strong>：选定推进剂组合与混合比，计算理论燃烧温度、气体常数、特征速度，以及比冲随室压与膨胀比的变化。</li>
+<li><strong>推力室几何</strong>：由流量与室压确定喉部面积，按特征长度确定燃烧室容积，按膨胀比确定出口面积，并设计收敛段与扩张段型面。</li>
+<li><strong>冷却与强度校核</strong>：估算壁面热流与温度分布，确定冷却方案与通道尺寸；按室压与热应力校核壁厚与结构。</li>
+<li><strong>供应系统匹配</strong>：确定挤压或泵压方案，计算管路压降、泵扬程、阀门流量特性，保证各工况下的流量稳定。</li>
+<li><strong>仿真</strong>：燃烧与流动仿真、结构强度与热分析、系统级启动关机时序仿真。</li>
+<li><strong>试车</strong>：按试车大纲执行，采集推力、室压、流量、温度等参数并与设计值比对。</li>
+<li><strong>迭代</strong>：根据试车偏差修正模型与设计，进入下一轮。</li>
+</ol>
+<p>流程中需要特别记录的是每一步的<strong>输入假设与判据</strong>，而不只是最终参数。否则后续人员无法判断哪些结论仍然成立、哪些已经随迭代失效。</p>
+<hr />
+<h2 id="_16">试车与数据</h2>
+<p>地面试车用于验证推力、比冲、混合比、启动与关机时序、冷却效果及结构完整性。</p>
+<ul>
+<li><strong>试车台</strong>：本站现有试车台见 <a href="../Oct_3_2026_TestMachine/">Oct_3_2026 试车台</a>。该试车台按固体发动机推力测量设计，液体试车还需补充推进剂供应、贮箱增压、泄放与安全防护，具体改造方案待补充。</li>
+<li><strong>测量参数</strong>：推力、室压、供应压力、氧化剂与燃料流量、各测点温度、振动、阀门时序与点火信号。</li>
+<li><strong>数据记录规范</strong>：</li>
+<li>每个通道标注量程、标定日期与采样率；</li>
+<li>所有通道使用统一时间基准，并记录触发时刻；</li>
+<li>原始数据与处理后的数据分开保存，保留处理脚本；</li>
+<li>异常与中止工况必须记录，不能只保留成功数据；</li>
+<li>试车记录注明推进剂批次、环境温度与大气压。</li>
+<li><strong>安全</strong>：液体试车涉及低温、高压与易燃介质，必须明确泄放路径、点火许可与人员隔离流程。</li>
+</ul>
+<hr />
+<h2 id="yf-500">YF-500 型号文档</h2>
+<p>YF-500 是本板块收录的第一型液体火箭发动机：500 N 级、气氧/95% 乙醇、再生冷却 + 气膜冷却、316L 不锈钢 SLM 整体打印。各版本按迭代顺序归档，设计参数、仿真图表与三维模型随版本收录。</p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>状态</th>
+<th>主要变化</th>
+<th>文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>初始方案</td>
+<td>6 组异类互击喷注；质量约 1.35 kg</td>
+<td><a href="v1/">进入 V1</a></td>
+</tr>
+<tr>
+<td>V2</td>
+<td>迭代方案</td>
+<td>4 组喷注；免后加工、自支撑打印；质量 1.63 kg</td>
+<td><a href="v2/">进入 V2</a></td>
+</tr>
+<tr>
+<td>V2.1</td>
+<td>轻量化</td>
+<td>头部四侧凹 + 镂空法兰；质量 1.39 kg（较 V1 减重 36%）；含喷注器互击 CFD</td>
+<td><a href="v2_1/">进入 V2.1</a></td>
+</tr>
+<tr>
+<td>V3</td>
+<td>喷注器设计</td>
+<td>喷注器嵌件三维模型与打印可行性分析</td>
+<td><a href="v3/">进入 V3</a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>各版本参数均由设计表截图逐格转录，AI 等级按整理方式标注；模型文件为设计交付物，不代表已试车状态。</p>
+</blockquote>
+<hr />
+<h2 id="_17">板块内容规划</h2>
+<table>
+<thead>
+<tr>
+<th>子板块</th>
+<th>拟用目录</th>
+<th>状态</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>循环与系统</td>
+<td><code>working_cycles/</code></td>
+<td>待补充</td>
+<td>各循环的原理、系统图与时序</td>
+</tr>
+<tr>
+<td>推力室</td>
+<td><code>thrust_chamber/</code></td>
+<td>待补充</td>
+<td>喷注器、燃烧室、喷管的几何与热分析</td>
+</tr>
+<tr>
+<td>供应系统</td>
+<td><code>feed_system/</code></td>
+<td>待补充</td>
+<td>泵、阀、管路与贮箱增压</td>
+</tr>
+<tr>
+<td>推进剂</td>
+<td><code>propellants/</code></td>
+<td>待补充</td>
+<td>物性数据、选型对比与相容性</td>
+</tr>
+<tr>
+<td>性能计算</td>
+<td><code>performance/</code></td>
+<td>待补充</td>
+<td>热力计算、参数反算与误差分析</td>
+</tr>
+<tr>
+<td>试车与数据</td>
+<td><code>test_and_data/</code></td>
+<td>待补充</td>
+<td>试车大纲、测量通道与数据处理</td>
+</tr>
+<tr>
+<td>型号案例</td>
+<td><code>reference_engines/</code></td>
+<td>待补充</td>
+<td>公开型号的方案对比与评述</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_18">资料索引</h2>
+<table>
+<thead>
+<tr>
+<th>资料</th>
+<th>类型</th>
+<th>说明</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>液体发动机循环方案对比</td>
+<td>综述</td>
+<td>四种循环的原理、优缺点与代表机型</td>
+<td>待补充</td>
+</tr>
+<tr>
+<td>推进剂物性与选型表</td>
+<td>数据</td>
+<td>比冲、密度、相容性与安全数据</td>
+<td>待补充</td>
+</tr>
+<tr>
+<td>推力室设计计算方法</td>
+<td>计算</td>
+<td>热力计算、喉部面积、膨胀比与型面</td>
+<td>待补充</td>
+</tr>
+<tr>
+<td>冷却设计参考资料</td>
+<td>综述</td>
+<td>再生冷却通道、膜冷却与烧蚀对比</td>
+<td>待补充</td>
+</tr>
+<tr>
+<td>供应系统设计参考资料</td>
+<td>综述</td>
+<td>挤压式与泵压式的参数匹配</td>
+<td>待补充</td>
+</tr>
+<tr>
+<td>试车台改造方案</td>
+<td>工程</td>
+<td>液体试车对现有试车台的改造需求</td>
+<td>待补充</td>
+</tr>
+<tr>
+<td>团队液体发动机型号文档</td>
+<td>工程</td>
+<td>YF-500 V1~V3 的设计参数、仿真、图表与三维模型</td>
+<td>已归档</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_19">站内相关板块</h3>
+<table>
+<thead>
+<tr>
+<th>板块</th>
+<th>说明</th>
+<th>文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>推进系统</td>
+<td>火箭推进总体、固体发动机与试车台资料入口</td>
+<td><a href="../">进入推进系统板块</a></td>
+</tr>
+<tr>
+<td>火箭燃料</td>
+<td>推进剂配方、制备工艺与测试资料</td>
+<td><a href="../fuel/">进入火箭燃料板块</a></td>
+</tr>
+<tr>
+<td>V2 代发动机</td>
+<td>本站固体推进剂实验发动机，可作为对照</td>
+<td><a href="../v2/">进入 V2 文档</a></td>
+</tr>
+<tr>
+<td>文档写作格式规范</td>
+<td>AI 等级定义、命名与目录结构约定</td>
+<td><a href="../../development/assets/docs_standard/">查看格式规范</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_20">说明</h2>
+<ul>
+<li>本页由 AI 起草（AI 等级 5），数值均为公开资料的典型范围，标注为「典型值/参考」，不代表本站任何实际设计或试车结果。</li>
+<li>板块边界与子板块规划仍会随实际资料补充调整；属于团队实际数据的文档须注明试车批次与数据来源。</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
